@@ -6,17 +6,16 @@
 <title>Ritesh Rijal - Portfolio</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+        font-family: 'Arial', sans-serif;
+        margin: 0; padding: 0;
         background-color: #f4f7f8;
         color: #333;
-        line-height: 1.6;
+        scroll-behavior: smooth;
     }
     header {
         background-color: #2c3e50;
         color: white;
-        padding: 40px 20px;
+        padding: 50px 20px;
         text-align: center;
     }
     nav {
@@ -24,89 +23,47 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
     nav a {
         color: white;
-        padding: 10px 20px;
+        padding: 15px 25px;
         text-decoration: none;
         margin: 5px;
         border-radius: 5px;
-        transition: background-color 0.3s;
+        transition: 0.3s;
     }
-    nav a:hover {
-        background-color: #1abc9c;
-    }
-    section {
-        padding: 50px 20px;
-        max-width: 1000px;
-        margin: auto;
-    }
+    nav a:hover { background-color: #1abc9c; }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
     h2 {
         color: #2c3e50;
         margin-bottom: 20px;
-        border-bottom: 2px solid #1abc9c;
+        border-bottom: 3px solid #1abc9c;
         display: inline-block;
         padding-bottom: 5px;
     }
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .about-text, .skills-list, .projects-list, .contact-info {
-        flex: 1 1 400px;
+    .container { display: flex; flex-wrap: wrap; gap: 20px; }
+    .card {
+        flex: 1 1 300px;
         background: white;
-        padding: 20px;
+        padding: 25px;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
     }
-    .profile-image {
-        max-width: 150px;
-        border-radius: 50%;
-        float: left;
-        margin-right: 20px;
-        margin-bottom: 10px;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-    ul li {
-        margin: 10px 0;
-        padding-left: 10px;
-        position: relative;
-    }
-    ul li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #1abc9c;
-        font-weight: bold;
-    }
-    footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #2c3e50;
-        color: white;
-    }
-    a {
-        color: #1abc9c;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    @media(max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
-        .profile-image {
-            float: none;
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
+    .profile-image { max-width: 150px; border-radius: 50%; margin-right: 20px; float: left; }
+    ul { list-style: none; padding: 0; }
+    ul li { margin: 10px 0; position: relative; padding-left: 15px; }
+    ul li::before { content: "•"; position: absolute; left: 0; color: #1abc9c; font-weight: bold; }
+    footer { text-align: center; padding: 25px; background-color: #2c3e50; color: white; }
+    a { color: #1abc9c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media(max-width:768px){ .profile-image { float:none; display:block; margin:0 auto 20px auto; } .container{flex-direction:column;} }
+    .skill-bar { background: #eee; border-radius: 25px; overflow: hidden; margin-bottom: 15px; }
+    .skill-level { height: 20px; background-color: #1abc9c; width:0; text-align:right; padding-right:5px; color:white; font-weight:bold; transition: width 2s; border-radius:25px;}
 </style>
 </head>
 <body>
@@ -126,9 +83,9 @@
 <section id="about">
     <h2>About Me</h2>
     <div class="container">
-        <div class="about-text">
-            <img src="ritesh.png" alt="Profile Picture" class="profile-image" />
-            <p>Hi! I'm <strong>Ritesh Rijal</strong>, a passionate Software Developer with expertise in Java, JSF, Spring Boot, and ERP systems. I specialize in building scalable, efficient, and client-focused applications. Currently, I work at <strong>Akshamala Info Tech</strong>, where I deliver customized software solutions and continuously improve user experience through innovative projects.</p>
+        <div class="card">
+            <img src="ritesh.png" alt="Profile Picture" class="profile-image"/>
+            <p>Hi! I'm <strong>Ritesh Rijal</strong>, a passionate Software Developer with expertise in Java, JSF, Spring Boot, and ERP systems. I build scalable and client-focused applications. Currently working at <strong>Akshamala Info Tech</strong>, I create innovative solutions to improve user experience and system efficiency.</p>
         </div>
     </div>
 </section>
@@ -136,16 +93,17 @@
 <section id="skills">
     <h2>Skills</h2>
     <div class="container">
-        <div class="skills-list">
-            <ul>
-                <li>Java (Core & OOP), Spring Boot, JSF & PrimeFaces</li>
-                <li>Frontend: HTML, CSS, JavaScript</li>
-                <li>Backend: REST APIs, MySQL, ERP Systems</li>
-                <li>Version Control: Git & GitLab</li>
-                <li>Reporting: Jasper iReport</li>
-                <li>Agile/Scrum Methodologies</li>
-                <li>Client Handling & IT Support</li>
-            </ul>
+        <div class="card">
+            <h3>Java & Backend</h3>
+            <div class="skill-bar"><div class="skill-level" data-level="90%">Java</div></div>
+            <div class="skill-bar"><div class="skill-level" data-level="85%">Spring Boot</div></div>
+            <div class="skill-bar"><div class="skill-level" data-level="80%">REST API</div></div>
+        </div>
+        <div class="card">
+            <h3>Frontend & Tools</h3>
+            <div class="skill-bar"><div class="skill-level" data-level="80%">JSF & PrimeFaces</div></div>
+            <div class="skill-bar"><div class="skill-level" data-level="75%">HTML/CSS/JS</div></div>
+            <div class="skill-bar"><div class="skill-level" data-level="85%">Git & GitLab</div></div>
         </div>
     </div>
 </section>
@@ -153,13 +111,21 @@
 <section id="projects">
     <h2>Projects</h2>
     <div class="container">
-        <div class="projects-list">
-            <ul>
-                <li><strong>Expense Tracker (Current):</strong> Web app using Spring Boot to manage daily expenses, exploring basic machine learning for analysis.</li>
-                <li><strong>YouTube Downloader (2022):</strong> Desktop app using Core Java & Java Swing for downloading videos efficiently.</li>
-                <li><strong>Marks Chat (2022):</strong> Chat application using JavaScript, PHP, HTML, CSS to enable messaging and commenting.</li>
-                <li><strong>College/School Management System:</strong> Developed features as per client requirements, including GPA grading reports and ERP-based functionality.</li>
-            </ul>
+        <div class="card">
+            <h3>Expense Tracker</h3>
+            <p>Web app using Spring Boot to manage daily expenses, exploring basic ML features for analysis.</p>
+        </div>
+        <div class="card">
+            <h3>YouTube Downloader</h3>
+            <p>Desktop app using Core Java & Java Swing for efficient video downloads.</p>
+        </div>
+        <div class="card">
+            <h3>Marks Chat</h3>
+            <p>Chat application using JS, PHP, HTML, and CSS to enable messaging and sharing opinions.</p>
+        </div>
+        <div class="card">
+            <h3>College/School Management System</h3>
+            <p>Developed client-specific features, including GPA grading reports and ERP-based functionality.</p>
         </div>
     </div>
 </section>
@@ -167,7 +133,7 @@
 <section id="contact">
     <h2>Contact Me</h2>
     <div class="container">
-        <div class="contact-info">
+        <div class="card">
             <p>Email: <a href="mailto:rijalritesh32@gmail.com">rijalritesh32@gmail.com</a></p>
             <p>Phone: +358 449529997</p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/riteshrijal" target="_blank">linkedin.com/in/riteshrijal</a></p>
@@ -178,6 +144,18 @@
 <footer>
     <p>&copy; 2025 Ritesh Rijal | All Rights Reserved</p>
 </footer>
+
+<script>
+// Animate skill bars
+function animateSkills() {
+    const skills = document.querySelectorAll('.skill-level');
+    skills.forEach(skill => {
+        const level = skill.getAttribute('data-level');
+        skill.style.width = level;
+    });
+}
+window.addEventListener('load', animateSkills);
+</script>
 
 </body>
 </html>
