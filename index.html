@@ -3,228 +3,108 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:title" content="Ritesh Rijal | Software Developer | Java & Spring Boot">
-<meta property="og:description" content="Portfolio of Ritesh Rijal – Java backend developer in Finland with expertise in Spring Boot, ERP systems, MySQL.">
+
+<meta property="og:title" content="Ritesh Rijal | Java Software Developer">
+<meta property="og:description" content="Java backend developer skilled in Spring Boot, JSF, MySQL, ERP systems. Master's student in Finland.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rijalritesh.com.np/">
 
-
-<title>Ritesh Rijal | Software Developer | Java & Spring Boot</title>
-
+<title>Ritesh Rijal | Java Software Developer</title>
 
 <style>
 :root {
-    --bg: #f8f9fb;
-    --card: #ffffff;
-    --text: #222;
-    --muted: #555;
-    --border: #e5e7eb;
-    --accent: #2563eb;
+    --bg:#f8f9fb; --card:#fff; --text:#222; --muted:#555;
+    --border:#e5e7eb; --accent:#2563eb;
 }
-
 body.dark {
-    --bg: #0f172a;
-    --card: #020617;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --border: #1e293b;
-    --accent: #3b82f6;
+    --bg:#0f172a; --card:#020617; --text:#e5e7eb;
+    --muted:#94a3b8; --border:#1e293b; --accent:#3b82f6;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* {margin:0; padding:0; box-sizing:border-box;}
 body {
-    font-family: system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
+    font-family:system-ui,sans-serif;
+    background:var(--bg); color:var(--text);
+    line-height:1.6; transition:.3s;
 }
-
-/* ---------- DARK MODE BUTTON ---------- */
 .toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    z-index: 999;
+    position:fixed; top:15px; right:15px;
+    padding:8px 12px; border-radius:6px;
+    border:1px solid var(--border);
+    background:var(--card); cursor:pointer;
 }
-
-/* ---------- HEADER ---------- */
 header {
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-    padding: 40px 20px;
+    background:var(--card); border-bottom:1px solid var(--border);
+    padding:40px 20px;
 }
+header h1 {font-size:2.3rem;}
+header p {color:var(--muted); margin-top:6px;}
 
-.header-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-header h1 {
-    font-size: 2.2rem;
-}
-
-header p {
-    margin-top: 8px;
-    color: var(--muted);
-}
-
-/* ---------- NAV ---------- */
 nav {
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
+    background:var(--card); border-bottom:1px solid var(--border);
 }
-
 .nav-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    gap: 20px;
-    padding: 12px 20px;
+    max-width:1100px; margin:auto;
+    display:flex; gap:20px; padding:12px 20px;
 }
-
 nav a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
+    text-decoration:none; color:var(--text); font-weight:500;
 }
+nav a:hover {color:var(--accent);}
 
-nav a:hover {
-    color: var(--accent);
-}
-
-/* ---------- MAIN ---------- */
 main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+    max-width:1100px; margin:auto; padding:40px 20px;
 }
-
-section {
-    margin-bottom: 60px;
-}
-
+section {margin-bottom:60px;}
 section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 16px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-    padding-bottom: 4px;
+    font-size:1.6rem; margin-bottom:16px;
+    border-bottom:2px solid var(--accent);
+    display:inline-block;
 }
 
-/* ---------- ABOUT ---------- */
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 30px;
+    display:grid; grid-template-columns:1fr 2fr; gap:30px;
 }
-
 .profile-image {
-    max-width: 220px;
-    border-radius: 8px;
+    max-width:220px; border-radius:8px;
 }
-
 pre {
-    background: var(--bg);
-    padding: 15px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    border: 1px solid var(--border);
+    background:var(--bg); padding:15px;
+    border:1px solid var(--border);
+    border-radius:6px; font-size:.85rem;
 }
 
-/* ---------- SKILLS ---------- */
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+.skills-list, .project-list {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+.skill-box, .project {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:18px; border-radius:6px;
 }
 
-.skill-box {
-    background: var(--card);
-    padding: 16px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-}
-
-/* ---------- PROJECTS ---------- */
-.project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.project {
-    background: var(--card);
-    padding: 18px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-}
-
-/* ---------- CONTACT ---------- */
-.contact-form {
-    max-width: 500px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-}
-
-.contact-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
+.project h3 {margin-bottom:8px;}
+.project p {color:var(--muted); font-size:.95rem;}
 
 .btn {
-    padding: 10px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
+    display:inline-block; margin-top:12px;
+    padding:8px 14px; border-radius:6px;
+    text-decoration:none; font-weight:500;
+    border:1px solid var(--border);
+    color:var(--text); background:var(--card);
 }
-
 .btn.primary {
-    background: var(--accent);
-    color: white;
-    border: none;
+    background:var(--accent); color:#fff; border:none;
 }
 
-/* ---------- FOOTER ---------- */
 footer {
-    background: var(--card);
-    border-top: 1px solid var(--border);
-    padding: 20px;
-    text-align: center;
-    color: var(--muted);
+    background:var(--card); border-top:1px solid var(--border);
+    padding:20px; text-align:center; color:var(--muted);
 }
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:768px){
+    .about-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -234,82 +114,82 @@ footer {
 <button class="toggle" onclick="toggleDark()">🌙 Dark</button>
 
 <header>
-    <div class="header-container">
-        <h1>Ritesh Rijal</h1>
-        <p>Software Developer</p>
-    </div>
+    <h1>Ritesh Rijal</h1>
+    <p>Java Software Developer | Master's Student – University of Vaasa</p>
 </header>
 
 <nav>
-    <div class="nav-container">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div class="nav-container">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</div>
 </nav>
 
 <main>
 
 <section id="about">
 <h2>About Me</h2>
-
 <div class="about-grid">
-    <img src="ritesh.png" class="profile-image">
-
-    <div>
-        
+<img src="ritesh.png" class="profile-image">
 
 <pre>
 public class Developer {
     String name = "Ritesh Rijal";
     String role = "Java Software Developer";
-    String degree = "Master in Computer Science";
+    String location = "Finland";
 
     void mindset() {
-        System.out.println("Clean, maintainable, scalable code");
+        System.out.println("Clean, scalable, maintainable code");
     }
 }
 </pre>
-    </div>
 </div>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills-list">
-    <div class="skill-box">Java & OOP</div>
-    <div class="skill-box">Spring Boot</div>
-    <div class="skill-box">REST APIs</div>
-    <div class="skill-box">Database Design (MySQL)</div>
-    <div class="skill-box">JSF & PrimeFaces</div>
-    <div class="skill-box">Git & Version Control</div>
-    <div class="skill-box">ERP Systems & Client Handling</div>
+    <div class="skill-box"><strong>Languages</strong><br>Java, Python, C, C++</div>
+    <div class="skill-box"><strong>Backend</strong><br>Spring Boot, REST APIs, JSF, PrimeFaces</div>
+    <div class="skill-box"><strong>Database</strong><br>MySQL, Database Design</div>
+    <div class="skill-box"><strong>Tools</strong><br>Git, GitHub, GitLab, Maven, Linux</div>
+    <div class="skill-box"><strong>Enterprise</strong><br>ERP Systems, Jasper iReport</div>
+    <div class="skill-box"><strong>Practices</strong><br>OOP, Design Patterns, Agile/Scrum</div>
 </div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <div class="project-list">
-    <div class="project">Youtube Downloader</div>
-    <div class="project">Expense Tracker</div>
-    <div class="project">Attendance Sync Tool</div>
+
+<div class="project">
+<h3>Expense Tracker</h3>
+<p>Spring Boot REST web app for expense management with MySQL and Git.</p>
+<a class="btn" href="https://github.com/RiteshRijal/ExpenseTracker" target="_blank">GitHub →</a>
+</div>
+
+<div class="project">
+<h3>YouTube Downloader</h3>
+<p>Core Java & Swing desktop app for downloading YouTube videos.</p>
+<a class="btn" href="https://github.com/RiteshRijal/YoutubeDownloader" target="_blank">GitHub →</a>
+</div>
+
+<div class="project">
+<h3>Marks Chat</h3>
+<p>Web-based chat app using JavaScript, PHP, HTML, and CSS.</p>
+<a class="btn" href="https://github.com/RiteshRijal/Marks-chat" target="_blank">GitHub →</a>
+</div>
+
 </div>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
-
-<form class="contact-form">
-    <input type="text" placeholder="Your Name">
-    <textarea rows="4" placeholder="Your Message"></textarea>
-
-    <div class="contact-actions">
-        <a class="btn primary" href="mailto:rijalritesh32@gmail.com">Send Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/ritesh-rijal-17b520255/" target="_blank">LinkedIn</a>
-        <a class="btn" href="#" title="Add your GitHub URL">GitHub</a>
-    </div>
-</form>
+<a class="btn primary" href="mailto:rijalritesh32@gmail.com">Email</a>
+<a class="btn" href="https://www.linkedin.com/in/ritesh-rijal-17b520255/" target="_blank">LinkedIn</a>
+<a class="btn" href="https://github.com/RiteshRijal" target="_blank">GitHub</a>
 </section>
 
 </main>
@@ -319,7 +199,7 @@ public class Developer {
 </footer>
 
 <script>
-function toggleDark() {
+function toggleDark(){
     document.body.classList.toggle("dark");
 }
 </script>
